@@ -7,10 +7,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.ventas.entity.Cargo;
 import com.example.ventas.entity.Personal;
+import com.example.ventas.entity.Turno;
 
 
 public interface PersonalRepository extends JpaRepository<Personal, Integer> {
 
-
+    List<Turno> findByTurnoId(Integer idTurno);
 
 }
