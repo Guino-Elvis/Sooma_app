@@ -1,6 +1,8 @@
 package com.example.ventas.entity;
 
 
+import java.sql.Date;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
@@ -15,7 +17,7 @@ public class Trabajador {
     private String nombre;
     private String apellido;
     private String dni;
-    private String f_nacimiento;
+    private Date f_nacimiento;
     private String telefono;
 
     @ManyToOne(fetch = FetchType.LAZY)
