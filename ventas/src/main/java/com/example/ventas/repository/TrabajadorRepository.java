@@ -14,5 +14,5 @@ import com.example.ventas.entity.Turno;
 
 public interface TrabajadorRepository extends JpaRepository<Trabajador, Integer> {
 
-  List<Cargo> findByCargoId(Integer idCargo);
+  List<Trabajador> findByCargoId(Integer idCargo);
 }

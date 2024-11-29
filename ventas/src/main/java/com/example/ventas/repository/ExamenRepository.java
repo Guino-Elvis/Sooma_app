@@ -13,7 +13,12 @@ import com.example.ventas.entity.Trabajador;
 
 public interface ExamenRepository extends JpaRepository<Examen, Integer> {
 
-    List<Personal> findByPersonalId(Integer idPersonal);
-    List<Trabajador> findByTrabajadorId(Integer idTrabajador);
+     // Buscar exámenes por el ID de Personal asociado
+     List<Examen> findByPersonalId(Integer idPersonal);
+
+     // Buscar exámenes por el ID de Trabajador asociado
+     List<Examen> findByTrabajadorId(Integer idTrabajador);
 
 }
+
+

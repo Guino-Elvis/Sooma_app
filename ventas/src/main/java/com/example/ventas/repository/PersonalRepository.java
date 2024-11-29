@@ -12,6 +12,6 @@ import com.example.ventas.entity.Turno;
 
 public interface PersonalRepository extends JpaRepository<Personal, Integer> {
 
-    List<Turno> findByTurnoId(Integer idTurno);
+    List<Personal> findByTurnoId(Integer idTurno);
 
 }
