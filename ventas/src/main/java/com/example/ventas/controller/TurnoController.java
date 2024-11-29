@@ -1,7 +1,7 @@
 package com.example.ventas.controller;
 
-import com.example.ventas.entity.turno;
-import com.example.ventas.service.turnoService;
+import com.example.ventas.entity.Turno;
+import com.example.ventas.service.TurnoService;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,29 +12,30 @@ import org.springframework.http.ResponseEntity;
 @RestController
 @RequestMapping("/turno")
 
-public class turnoController {
+public class TurnoController {
 
     @Autowired
-    private turnoService turnoService;
+    private TurnoService turnoService;
 
     @GetMapping()
-    public ResponseEntity<List<turno>> list() {
+    public ResponseEntity<List<Turno>> list() {
         return ResponseEntity.ok().body(turnoService.listar());
     }
 
+  
 
     @PostMapping()
-    public ResponseEntity<turno> save(@RequestBody turno turno) {
+    public ResponseEntity<Turno> save(@RequestBody Turno turno) {
         return ResponseEntity.ok(turnoService.guardar(turno));
     }
 
     @PutMapping()
-    public ResponseEntity<turno> update(@RequestBody turno turno) {
+    public ResponseEntity<Turno> update(@RequestBody Turno turno) {
         return ResponseEntity.ok(turnoService.actualizar(turno));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<turno> listById(@PathVariable(required = true) Integer id) {
+    public ResponseEntity<Turno> listById(@PathVariable(required = true) Integer id) {
         return ResponseEntity.ok().body(turnoService.listarPorId(id).get());
     }
 

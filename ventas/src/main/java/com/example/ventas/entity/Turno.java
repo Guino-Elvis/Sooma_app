@@ -6,10 +6,12 @@ import lombok.Data;
 
 @Entity
 @Data
-public class turno {
+public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String nombre;
-
+    private String ra_social;
+    private String marca;
+    private String numero;
+    private String foto;
 }

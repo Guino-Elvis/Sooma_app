@@ -5,37 +5,35 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.ventas.entity.turno;
-import com.example.ventas.repository.turnoRepository;
-import com.example.ventas.service.turnoService;
+import com.example.ventas.entity.Turno;
+import com.example.ventas.repository.TurnoRepository;
+import com.example.ventas.service.TurnoService;
 
 
 @Service
-public class turnoServiceImpl implements turnoService{
+public class TurnoServiceImpl implements TurnoService{
     
     @Autowired
-    private turnoRepository turnoRepository;
-
-  
+    private TurnoRepository turnoRepository;
 
     @Override
-    public List<turno> listar() {
+    public List<Turno> listar() {
         return turnoRepository.findAll();
     }
 
     @Override
-    public turno guardar(turno turno) {
+    public Turno guardar(Turno turno) {
         return turnoRepository.save(turno);
     }
 
     @Override
-    public turno actualizar(turno turno) {
+    public Turno actualizar(Turno turno) {
 
         return turnoRepository.save(turno);
     }
 
     @Override
-    public Optional<turno> listarPorId(Integer id) {
+    public Optional<Turno> listarPorId(Integer id) {
         return turnoRepository.findById(id);
     }
 
