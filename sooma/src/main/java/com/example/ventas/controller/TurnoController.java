@@ -1,7 +1,7 @@
 package com.example.ventas.controller;
 
-import com.example.ventas.entity.Turno;
-import com.example.ventas.service.TurnoService;
+import com.example.ventas.entity.turno;
+import com.example.ventas.service.turnoService;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,36 +12,29 @@ import org.springframework.http.ResponseEntity;
 @RestController
 @RequestMapping("/turno")
 
-public class TurnoController {
+public class turnoController {
 
     @Autowired
-    private TurnoService turnoService;
+    private turnoService turnoService;
 
     @GetMapping()
-    public ResponseEntity<List<Turno>> list() {
+    public ResponseEntity<List<turno>> list() {
         return ResponseEntity.ok().body(turnoService.listar());
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity<List<Turno>> buscar(
-            @RequestParam(required = false) String ra_social,
-            @RequestParam(required = false) String marca) {
-        List<Turno> turnos = turnoService.buscar(ra_social, marca);
-        return ResponseEntity.ok().body(turnos);
-    }
 
     @PostMapping()
-    public ResponseEntity<Turno> save(@RequestBody Turno turno) {
+    public ResponseEntity<turno> save(@RequestBody turno turno) {
         return ResponseEntity.ok(turnoService.guardar(turno));
     }
 
     @PutMapping()
-    public ResponseEntity<Turno> update(@RequestBody Turno turno) {
+    public ResponseEntity<turno> update(@RequestBody turno turno) {
         return ResponseEntity.ok(turnoService.actualizar(turno));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Turno> listById(@PathVariable(required = true) Integer id) {
+    public ResponseEntity<turno> listById(@PathVariable(required = true) Integer id) {
         return ResponseEntity.ok().body(turnoService.listarPorId(id).get());
     }
 

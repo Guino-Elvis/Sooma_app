@@ -4,19 +4,19 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.ventas.entity.Turno;
+import com.example.ventas.entity.turno;
 
-public interface TurnoService {
+public interface turnoService {
 
-    public List<Turno> listar();
+    public List<turno> listar();
 
-    public Turno guardar(Turno turno);
+    public turno guardar(turno turno);
 
-    public Turno actualizar(Turno turno);
+    public turno actualizar(turno turno);
 
-    public Optional<Turno> listarPorId(Integer id);
+    public Optional<turno> listarPorId(Integer id);
 
     public void eliminarPorId(Integer id);
 
-  
+    
 }
